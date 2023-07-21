@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captive Portal</title>
+</head>
+<style>
+    *,
+    html {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    html {
+        width: 100%;
+        height: 100%;
+        --background-color: #1367d5;
+        --accent-color: #FFC25F;
+        --accent-color-2: #FF65A5;
+    }
+    
+
+    body {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: var(--background-color);
+    }
+
+    .center {
+        width: 100%;
+        height: 50%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 5vw;
+        color: var(--accent-color);
+        margin: 5vh;
+    }
+
+    p {
+        font-size: 64px;
+    }
+    .frmSubmit{
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        color: white;
+        background-color: var(--accent-color-2);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .frmSubmit:hover{
+        background-color: #009a5a;
+    }
+</style>
+<body>
+    <div class="center">
+        <h1>🍍PineApple Free WIFI</h1>
+        <form method="post" action="/accept">
+            <button class="frmSubmit" type="submit">Accept Terms and Conditions</button>
+            <input type="hidden" name="mtd" value="aa38b8bcaf0de4b40cf2769fb2006fd4">
+        </form>
+    </div>
+</body>
+</html>
