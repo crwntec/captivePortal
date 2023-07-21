@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const { exec } = require('child_process');
 const express = require('express');
 
-const PORT = 8080;
+const PORT = 8090;
 
 var app = express(express);
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,7 +13,7 @@ app.get("/", (req,res)=>{
 })
 app.post("/accept", (req,res)=>{
     if(req.body.mtd="aa38b8bcaf0de4b40cf2769fb2006fd4"){
-        exec('echo test',(err,stdout,stderr)=>{
+        exec(`iptables -t nat -I PREROUTING 1 -s ${req.ip} -j ACCEPT && iptables -I FORWARD -s ${req.ip} -j ACCEPT`,(err,stdout,stderr)=>{
             if (err){
                 console.log(err);
                 res.sendStatus(500);
